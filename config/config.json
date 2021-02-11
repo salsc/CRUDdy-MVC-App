@@ -7,6 +7,6 @@
     "dialect": "postgres"
   },
   "production": {
-    "use_env_variable": "https://git.heroku.com/cruddy-mvc-app.git"
+    "use_env_variable": "DATABASE_URL"
   }
 }
