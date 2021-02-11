@@ -22,6 +22,28 @@ router.post('/',(req,res)=>{
     });
 });
 
+//edit
+router.get('/:id/edit', (req,res)=>{
+  Item.findByPk(req.params.id).then((item)=>{
+      res.render('edit.ejs',{item});
+  })
+});
 
+//put for edit (update)
+router.put('/:id', (req,res) => {
+  Item.update(req.body, {
+      where: {id: req.params.id},
+      returning: true,
+  }).then((item)=>{
+      res.redirect('/item');
+  });
+});
+
+//delete
+router.delete('/:id', (req, res) => {
+	Item.destroy({where: {id: req.params.id} }).then(()=>{
+        res.redirect('/item');
+    });
+});
 
 module.exports=router;

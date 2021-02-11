@@ -9,16 +9,13 @@ app.use((req, res, next) => {
     next();
 });
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 
 app.use('/item', require('./controllers/itemController.js'));
 
-
-
-
-
 /////routes
 app.get('/',(req,res)=>{
-    res.redirect('/catalog')
+    res.redirect('/item')
 })
 
 app.listen(3002,()=>{
