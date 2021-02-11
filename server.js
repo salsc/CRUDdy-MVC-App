@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 });
 app.use(express.urlencoded({extended:true}));
 
-app.use('/catalog', require('./controllers/catalogController.js'));
+app.use('/item', require('./controllers/itemController.js'));
 
 
 

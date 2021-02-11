@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is the index</h1>
+    <h1>index page</h1>
+    <nav>
+        <a href="/catalog/new">Add a new Item</a>
+    </nav>
+    <ul class="items">
+        <% for (let i=0;i<catalog.length;i++) {%>
+            <li>
+                <p><%=catalog[i].name%></p>
+                <form style="display:inline "action="/catalog/<%=catalog[i].id;%>?_method=DELETE" method="POST">
+                    <input type='submit' value='delete'/>
+                </form>
+                <a href="/catalog/<%=catalog[i].id%>/edit" style="display:inline"><button>edit</button></a>
+            </li>
+        <%}%>
+    </ul>
+    <a href="">Log Out</a>
 </body>
 </html>
