@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
@@ -18,6 +19,6 @@ app.get('/',(req,res)=>{
     res.redirect('/item')
 })
 
-app.listen(3002,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Your order?")
 })

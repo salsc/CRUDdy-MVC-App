@@ -5,5 +5,8 @@
     "database": "assign_stuff",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "https://git.heroku.com/cruddy-mvc-app.git"
   }
 }
