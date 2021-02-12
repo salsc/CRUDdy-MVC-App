@@ -1,0 +1,18 @@
+        <div class="selections">
+            <nav>
+                <a href="">?Printer Friendly View?</a>
+            </nav>
+            <ul class="items">
+                <h3>Selected Items</h3>
+                <% for (let i=0;i<selection.length;i++) {%>
+                    <li>
+                        <p style="display:inline"><%=item[i].name%></p>
+                        <a href="/item/<%=item[i].id%>/edit" style="display:inline"><button>modify</button></a>
+                        <form action="/item/<%=item[i].id/add;%>?_method=PUT" method="POST"  style="display:inline">
+                            <input type='submit' value='add'/>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>

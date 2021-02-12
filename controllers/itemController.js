@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Item = require('../models').Item;
+const Selection = require('../models').Selection;
 
 //index
 router.get('/', (req, res) => {
@@ -20,6 +21,23 @@ router.post('/',(req,res)=>{
     Item.create(req.body).then((newItem)=>{
     res.redirect('/item');
     });
+});
+
+//post to add item to selection
+router.post('/:id/add',(req,res)=>{
+  Selection.findAll({
+    where: {
+      itemId: req.body.id
+    }
+  }).then((items)=>{
+    if (items.id === req.body.id){
+      items.quantity += 1;
+    } else {
+      Item.create(req.body).then((newItem)=>{
+      newItem.quanity = 1;
+      })
+    }
+  })
 });
 
 //edit

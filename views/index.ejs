@@ -8,18 +8,41 @@
 </head>
 <body>
     <h1>index page</h1>
-    <nav>
-        <a href="/item/new">Add a new Item</a>
-    </nav>
-    <ul class="items">
-        <h3>Catalog Items</h3>
-        <% for (let i=0;i<item.length;i++) {%>
-            <li>
-                <p style="display:inline"><%=item[i].name%></p>
-                <a href="/item/<%=item[i].id%>/edit" style="display:inline"><button>modify</button></a>
-            </li>
-        <%}%>
-    </ul>
+    <div class="container">
+        <div class="items">
+            <nav>
+                <a href="/item/new">Add a new Item</a>
+            </nav>
+            <ul>
+                <h3>Catalog Items</h3>
+                <% for (let i=0;i<item.length;i++) {%>
+                    <li>
+                        <p style="display:inline"><%=item[i].name%></p>
+                        <a href="/item/<%=item[i].id%>/edit" style="display:inline"><button>modify</button></a>
+                        <form action="/item/<%=item[i].id/add;%>?_method=PUT" method="POST"  style="display:inline">
+                            <input type='submit' value='add'/>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+        <div class="selections">
+            <nav>
+                <a href="">?Printer Friendly View?</a>
+            </nav>
+            <ul>
+                <h3>Selected Items</h3>
+                <% for (let i=0;i<selection.length;i++) {%>
+                    <li>
+                        <p style="display:inline"><%=selection[i].name%></p>
+                        <form action="/item/<%=selection.id;%>?_method=DELETE" method="POST">
+                            <input type='submit' value='delete'/>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
     <a href="">?Log Out?</a>
 </body>
 </html>
