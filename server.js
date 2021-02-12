@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 
 
 /////middleware
+app.use(express.static("public"));
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
