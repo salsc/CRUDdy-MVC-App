@@ -7,9 +7,11 @@ const Selection = require('../models').Selection;
 //index
 router.get('/', (req, res) => {
     Item.findAll().then((item) => {
-      res.render('index.ejs', {item})
-    });
-  });
+      Selection.findAll().then((selection)=>{
+        res.render('index.ejs', {item, selection})
+    })
+  })
+})
 
 //new
 router.get('/new',(req,res)=>{
@@ -24,19 +26,20 @@ router.post('/',(req,res)=>{
 });
 
 //post to add item to selection
-router.post('/:id/add',(req,res)=>{
-  Selection.findAll({
+router.post('/:itemId/add',(req,res)=>{
+  Selection.findOne({
     where: {
-      itemId: req.body.id
+      itemId: req.params.itemId
     }
-  }).then((items)=>{
-    if (items.id === req.body.id){
-      items.quantity += 1;
+  }).then((selection)=>{
+    if (selection === null){
+      Selection.create({itemId:req.params.itemId,quantity:1}).then(()=>{
+        })
     } else {
-      Item.create(req.body).then((newItem)=>{
-      newItem.quanity = 1;
-      })
+      selection.quantity += 1;
+      selection.save();
     }
+    res.redirect('/item');
   })
 });
 
@@ -57,9 +60,16 @@ router.put('/:id', (req,res) => {
   });
 });
 
-//delete
+//delete from items
 router.delete('/:id', (req, res) => {
 	Item.destroy({where: {id: req.params.id} }).then(()=>{
+        res.redirect('/item');
+    });
+});
+
+//delete from items
+router.delete('/selection/:id', (req, res) => {
+	Selection.destroy({where: {id: req.params.id} }).then(()=>{
         res.redirect('/item');
     });
 });

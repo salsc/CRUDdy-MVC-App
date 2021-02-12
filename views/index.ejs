@@ -20,7 +20,7 @@
                     <li>
                         <p style="display:inline"><%=item[i].name%></p>
                         <a href="/item/<%=item[i].id%>/edit" style="display:inline"><button>modify</button></a>
-                        <form action="/item/<%=item[i].id/add;%>?_method=PUT" method="POST"  style="display:inline">
+                        <form action="/item/<%=item[i].id%>/add" method="POST"  style="display:inline">
                             <input type='submit' value='add'/>
                         </form>
                     </li>
@@ -35,8 +35,8 @@
                 <h3>Selected Items</h3>
                 <% for (let i=0;i<selection.length;i++) {%>
                     <li>
-                        <p style="display:inline"><%=selection[i].name%></p>
-                        <form action="/item/<%=selection.id;%>?_method=DELETE" method="POST">
+                        <p style="display:inline"><%=selection[i].itemId%> <%=selection[i].quantity%></p>
+                        <form action="/item/selection/<%=selection[i].id;%>?_method=DELETE" method="POST"  style="display:inline">
                             <input type='submit' value='delete'/>
                         </form>
                     </li>

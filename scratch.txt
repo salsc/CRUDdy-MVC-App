@@ -16,3 +16,10 @@
             </ul>
         </div>
     </div>
+
+
+
+
+                            <form action="/item/<%=item[i].id/add;%>?_method=PUT" method="POST"  style="display:inline">
+                            <input type='submit' value='add'/>
+                        </form>

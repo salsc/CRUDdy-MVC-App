@@ -15,9 +15,9 @@ app.use(methodOverride('_method'));
 app.use('/item', require('./controllers/itemController.js'));
 
 /////routes
-app.get('/',(req,res)=>{
-    res.redirect('/item')
-})
+// app.get('/',(req,res)=>{
+//     res.redirect('/item')
+// })
 
 app.listen(process.env.PORT,()=>{
     console.log("Your order?")
