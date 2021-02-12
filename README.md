@@ -88,13 +88,13 @@ This code is pretty neat because it checks to see if there is an entry in Select
 **RESOLUTION**: Missing comma after first object in sources {} object
 
 ## User Stories
-*1- As a user, I want to be able to add items to the master list so that I can make custom subsets later.
-*2- As a user, I want to edit existing items in the catalog to keep them useful.
-*3- As a user, I want to be able to delete unwanted items from the catalog so that the curated list is relevant.
-*4- As a user, I want to be able to track the quantity of a given item in my list of selections so I do not have to count duplicate entries.
-*5- As a user, I want to be able to view and print my list of selections on a clean page, printer friendly, so that it is more readable.
-*6- As a user, I want to be able to directly edit the quantity of a selected item so that I can avoid repeated clicks.
-*7- As a user, I want to be able to access the app publicly via herokuapp so that I can access it freely.
-*8- As a user, I want to be able to quicly select items without fear of accidentally deleting them from the master list so I can avoid damaging the catalog.
-*9- As a user, I want to be able to quickly delete items from the list of selections so that I can tailor the list quickly.
-*10- As a user, I want to be able to have my own list of selections and to be able to compare with other users so that we can determine common entries as well as unique entries.
+1. As a user, I want to be able to add items to the master list so that I can make custom subsets later.
+2. As a user, I want to edit existing items in the catalog to keep them useful.
+3. As a user, I want to be able to delete unwanted items from the catalog so that the curated list is relevant.
+4. As a user, I want to be able to track the quantity of a given item in my list of selections so I do not have to count duplicate entries.
+5. As a user, I want to be able to view and print my list of selections on a clean page, printer friendly, so that it is more readable.
+6. As a user, I want to be able to directly edit the quantity of a selected item so that I can avoid repeated clicks.
+7. As a user, I want to be able to access the app publicly via herokuapp so that I can access it freely.
+8. As a user, I want to be able to quicly select items without fear of accidentally deleting them from the master list so I can avoid damaging the catalog.
+9. As a user, I want to be able to quickly delete items from the list of selections so that I can tailor the list quickly.
+10. As a user, I want to be able to have my own list of selections and to be able to compare with other users so that we can determine common entries as well as unique entries.
