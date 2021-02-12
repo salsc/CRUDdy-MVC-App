@@ -6,8 +6,8 @@ const Selection = require('../models').Selection;
 
 //index
 router.get('/', (req, res) => {
-    Item.findAll().then((item) => {
-      Selection.findAll().then((selection)=>{
+    Item.findAll({include:Selection}).then((item) => {
+      Selection.findAll({include:Item}).then((selection)=>{
         res.render('index.ejs', {item, selection})
     })
   })
